@@ -33,11 +33,11 @@ int main(int argc, char* argv[]) {
     uint8_t b_key[str_key.length() / 2];
     ascii2bytes(b_key, str_key);
 
-    string str_iv = "e8b253d9da019dd1dbec3afbf792e5ea";
+    string str_iv = "7faa71dbb2c24faca6753e4291e72c0b";
     uint8_t b_iv[str_iv.length() / 2];
     string2bytes(b_iv, str_iv);
 
-    string encrypted = "c85a35d411122182235baa5923148b0e3c2a9a6f12eb7b56491e745ce9d41585";
+    string encrypted = "44a31baf1e2fc5bbaf04ba21586fcb24";
 
     uint8_t enc_msg[encrypted.length() / 2];
     string2bytes(enc_msg, encrypted);
@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
 
     AES_CBC_decrypt_buffer(&ctx, enc_msg, encrypted.length()/2);
 
+    // FIXME: This should output "Hello"
     cout << enc_msg << endl;
 
     return 0;

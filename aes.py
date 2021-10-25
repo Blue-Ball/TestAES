@@ -30,10 +30,13 @@ def decrypt(key, enc):
 
 if __name__ == '__main__':
 
-    _key = "1234567890abcdef1234567890abcdef" # should be size 32 bytes to AES_256
-    e_msg = "This is a small and portable implementation of the AES ECB, CTR and CBC encryption algorithms written in C.\
-        You can override the default key-size of 128 bit with 192 or 256 bit by defining the symbols AES192 or AES256 in"
+    _key = "1234567890abcdef1234567890abcdef"  # should be size 32 bytes to AES_256
+    msg = "Hello"
 
-    _encrypted = encrypt(key=_key, raw=e_msg)
+    _encrypted = encrypt(key=_key, raw=msg)
 
     print(f"Decrypted: `{decrypt(key=_key, enc=_encrypted)}`")
+
+    _encrypted = 'c70258f05ca77310b5c0094283d3df96' + '671d3e17dacb2b3f23f5b70559645930'          # IV + Encrypted
+
+    print(f"Decrypted from the encrypted one - {decrypt(key=_key, enc=_encrypted)}")
