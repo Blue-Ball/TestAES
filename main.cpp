@@ -30,7 +30,7 @@ void ascii2bytes(uint8_t target[], const string& str_val) {
 int main(int argc, char* argv[]) {
 
     string str_key = "1234567890abcdef1234567890abcdef";
-    uint8_t b_key[str_key.length() / 2];
+    uint8_t b_key[str_key.length()];
     ascii2bytes(b_key, str_key);
 
     string str_iv = "7faa71dbb2c24faca6753e4291e72c0b";
